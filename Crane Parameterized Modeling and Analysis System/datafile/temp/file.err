@@ -1,0 +1,323 @@
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:35:29
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:35:46
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:36:03
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:36:24
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:38:18
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:38:32
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:38:45
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:38:59
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       19:39:13
+
+ *** WARNING ***                         CP =       0.562   TIME= 19:39:17
+ Order vector does not match selected elements                           
+  New order vector being created.                                        
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:08:32
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:39
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:39
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_section.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:39
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:39
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_node.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:08:39
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ device.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:08:39
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ picture.txt does not exist.                                             
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:08:52
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:59
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:59
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_section.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:59
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:59
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_node.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:59
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ device.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:08:59
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ picture.txt does not exist.                                             
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:09:09
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:09:12
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:09:12
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_section.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:09:12
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:09:12
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_node.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:09:12
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ device.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:09:12
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ picture.txt does not exist.                                             
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:09:38
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:09:45
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:09:45
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_section.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:09:45
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:09:45
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_node.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:09:45
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ device.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:09:45
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ picture.txt does not exist.                                             
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:10:17
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:10:24
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:10:24
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:10:24
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:10:31
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:10:34
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:10:34
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:10:34
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:10:49
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:10:55
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:10:55
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:10:55
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:12:53
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:12:57
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:12:57
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.266   TIME= 14:12:57
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:13:03
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:13:07
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:13:07
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:13:07
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:13:40
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:13:43
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:13:43
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.250   TIME= 14:13:43
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:14:45
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:14:49
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:14:49
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_section.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:14:49
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:14:49
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_node.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:14:49
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ device.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:14:49
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\total_
+ picture.txt does not exist.                                             
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:18:49
+
+ *** WARNING ***                         CP =       0.219   TIME= 14:18:53
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_section.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.219   TIME= 14:18:53
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_node.txt does not exist.                                          
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.219   TIME= 14:18:53
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\primar
+ yBeam_picture.txt does not exist.                                       
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:19:22
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:19:26
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_section.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:19:26
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_node.txt does not exist.                                              
+  The /INPUT command is ignored.                                         
+
+ *** WARNING ***                         CP =       0.234   TIME= 14:19:26
+ File F:\MyWork\本科毕设\CranePMASystem\datafile\paramodel\001\endBea
+ m_picture.txt does not exist.                                           
+  The /INPUT command is ignored.                                         
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:23:04
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:23:16
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:23:29
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:24:00
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:24:14
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.516   TIME= 14:24:18
+ Order vector does not match selected elements                           
+  New order vector being created.                                        

@@ -1,0 +1,12 @@
+finish	
+/clear	
+/prep7	
+/UIS,MSGPOP,3
+/input,	F:\Destiny-work\CranePMASystem\datafile\paramodel\002\primaryBeam_section.txt
+/input,	F:\Destiny-work\CranePMASystem\datafile\paramodel\002\primaryBeam_node.txt
+allsel,all
+eplot
+/eshape,1
+/view,1,1,2,3
+/input,	F:\Destiny-work\CranePMASystem\datafile\paramodel\002\primaryBeam_picture.txt
+save,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\primaryBeamModel,db,,all

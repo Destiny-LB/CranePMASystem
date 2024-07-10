@@ -1,0 +1,83 @@
+	/prep7
+!假单元
+ET,11,BEAM44
+mp,	ex,	11,	2.10E+05	
+mp,	prxy,	11,	0.3	
+mp,	dens,	11,	1.00E-12
+r,11,1.00E+05,1.00E+12,1.00E+12,100,100,1.00E+12
+n,10,-11250,200,2100
+n,11,-11250,200,2100
+n,12,-11250, 0 ,2100
+n,20,-11250,  200,-2100
+n,21,-11250,  200,-2100
+n,22,-11250, 0 ,-2100
+n,30,11250, 200,2100
+n,31,11250, 200,2100
+n,32,11250, 0 ,2100
+n,40,11250,  200,-2100
+n,41,11250,  200,-2100
+n,42,11250, 0 ,-2100
+type,11
+real,11
+e,	1002,	20
+e,	21,	22
+e,	1026,	10
+e,	11,	12
+e,	1502,	40
+e,	41,	42
+e,	1526,	30
+e,	31,	32
+e,	1020,	5501
+e,	1010,	5001
+e,	1520,	5526
+e,	1510,	5026
+/solu
+fcum,	add	,
+ D,12,ux,0
+ D,12,uy,0
+!D,12,uz,0
+ D,12,rotx,0
+ D,12,roty,0
+!D,12,rotz,0
+ D,22,ux,0
+ D,22,uy,0
+ D,22,uz,0
+ D,22,rotx,0
+ D,22,roty,0
+!D,22,rotz,0
+ D,32,ux,0
+ D,32,uy,0
+!D,32,uz,0
+ D,32,rotx,0
+ D,32,roty,0
+!D,32,rotz,0
+ D,42,ux,0
+ D,42,uy,0
+ D,42,uz,0
+ D,42,rotx,0
+ D,42,roty,0
+!D,42,rotz,0
+cp,	next	,	ux	,	10	,	11
+cp,	next	,	uy	,	10	,	11
+cp,	next	,	uz	,	10	,	11
+!cp,	next	,	rotx,	10	,	11
+cp,	next	,	roty,	10	,	11
+cp,	next	,	rotz,	10	,	11
+cp,	next	,	ux	,	30	,	31
+cp,	next	,	uy	,	30	,	31
+cp,	next	,	uz	,	30	,	31
+!cp,	next	,	rotx,	30	,	31
+cp,	next	,	roty,	30	,	31
+cp,	next	,	rotz,	30	,	31
+cp,	next	,	ux	,	20	,	21
+cp,	next	,	uy	,	20	,	21
+cp,	next	,	uz	,	20	,	21
+!cp,	next	,	rotx,	20	,	21
+cp,	next	,	roty,	20	,	21
+cp,	next	,	rotz,	20	,	21
+cp,	next	,	ux	,	40	,	41
+cp,	next	,	uy	,	40	,	41
+cp,	next	,	uz	,	40	,	41
+!cp,	next	,	rotx,	40	,	41
+cp,	next	,	roty,	40	,	41
+cp,	next	,	rotz,	40	,	41

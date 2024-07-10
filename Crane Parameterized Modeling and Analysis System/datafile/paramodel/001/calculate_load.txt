@@ -1,0 +1,13 @@
+!载荷文件
+allsel
+/solu										
+fdele	,	all	,	all	,	                
+Acel	,	0	,	9.8	,	0               
+fcum	,	add	,			                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!小车起升动载(start)!
+Lift_L=511+5000+511
+Lift_DL=9.8*Lift_L
+f	,	xiaochewei1	,	fy	,	0-Lift_DL/2	
+f	,	xiaochewei2	,	fy	,	0-Lift_DL/2	
+allsel								
+solve								

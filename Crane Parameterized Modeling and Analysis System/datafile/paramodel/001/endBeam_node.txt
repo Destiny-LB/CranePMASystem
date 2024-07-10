@@ -1,0 +1,66 @@
+!!端梁节点与单元的创建以及材料单元类型的定义
+/prep7
+XHL_1_DENS=0.0000078
+et,1000,beam188
+mat,1000
+MP,EX,1000,210000
+MP,PRXY,1000,0.3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!引用全局变量来改密度
+MP,DENSITY,1000,DL_1_DENS
+	!!!!方向关键点
+n,1000,-8300,1217,-1450
+	!!!!开始写变截面坐标
+n,1001,-8300,217,-1450
+n,1002,-8300,217,-1250
+n,1010,-8300,217,-280
+n,1011,-8300,217,0
+n,1012,-8300,217,280
+n,1020,-8300,217,1250
+n,1021,-8300,217,1450
+!!读入定义的截面以及截面的偏移和变截面的定义
+!!单元（0+1)
+	sectype,	1001,	beam,	mesh
+	secoffset,user,	0,0
+	secread,	DL_1_Sec_1001,	sect	,,	mesh
+!!单元（1+1)
+	sectype,	1002,	beam,	mesh
+	secoffset,user,	0,0
+	secread,	DL_1_Sec_1002,	sect	,,	mesh
+!!!!!!!!!!!!!!!!!!!!!!!单元的连接
+type,1000
+mat,1000
+secnum,1001
+en,1010,1010,1011,1000
+en,1011,1011,1012,1000
+secnum,1002
+en,1001,1001,1002,1000
+en,1002,1002,1010,1000
+en,1012,1012,1020,1000
+en,1020,1020,1021,1000
+!!!!!!!!!!!!!!!!!!!!最后变截面的连接以及所有节点与单元的镜像
+type,1000
+mat,1000
+nsel,s,node,,1000,1030
+NSYM,X,500,ALL
+allsel
+esel,s,type,,1000
+ENSYM,500,,500,ALL
+allsel
+save
+!!!!!!!!!!!!!调主梁的体积，其编号为3 					
+Volume_type_1000=0 													
+Volume_initial_1000=0			 										
+E_count_1000=0 														
+E_num_1000=0															
+E_min_1000=0															
+esel,	s,	type	,,	1000										
+*get,	E_count_1000,	elem,	0,	COUNT								
+*get,	E_min_1000,	elem,	0,	num,	MIN							
+E_num_1000=E_min_1000														
+*do,	i,	0,	E_count_1000-1,	1									
+*get,	Volume_initial_1000,	elem,	E_num_1000,	VOLU				
+E_num_1000=ELnext(E_num_1000)												
+Volume_type_1000=Volume_initial_1000+Volume_type_1000						
+*enddo																
+mass1000=Volume_type_1000*0.0000078						                
+MP,DENSITY,1000,2*0.0000078*(190)/mass1000

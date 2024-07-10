@@ -1,0 +1,15 @@
+finish	
+/clear	
+/prep7	
+/UIS,MSGPOP,3
+/input,	F:\MyWork\CranePMASystem\datafile\paramodel\001\primaryBeam_section.txt
+/input,	F:\MyWork\CranePMASystem\datafile\paramodel\001\endBeam_section.txt
+/input,	F:\MyWork\CranePMASystem\datafile\paramodel\001\primaryBeam_node.txt
+/input,	F:\MyWork\CranePMASystem\datafile\paramodel\001\endBeam_node.txt
+/input,	F:\MyWork\CranePMASystem\datafile\paramodel\001\total_device.txt
+allsel,all
+eplot
+/eshape,1
+/view,1,1,2,3
+/input,	F:\MyWork\CranePMASystem\datafile\paramodel\001\total_picture.txt
+save,F:\MyWork\CranePMASystem\datafile\paramodel\001\totalModel,db,,all

@@ -1,0 +1,1461 @@
+
+ ANSYS Multiphysics                                
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *            ANSYS Release 19.2     LEGAL NOTICES             *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2018 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2008 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ Release 19.2
+     
+ Point Releases and Patches installed:   
+     
+ ANSYS, Inc. Products Release 19.2   
+ SpaceClaim Release 19.2 
+ AIM Release 19.2
+ Autodyn Release 19.2
+ LS-DYNA Release 19.2
+ CFX (includes CFD-Post) Release 19.2
+ Chemkin Release 19.2
+ EnSight Release 19.2
+ FENSAP-ICE Release 19.2 
+ Fluent (includes CFD-Post) Release 19.2 
+ Forte Release 19.2  
+ Polyflow (includes CFD-Post) Release 19.2   
+ TurboGrid Release 19.2  
+ ICEM CFD Release 19.2   
+ Aqwa Release 19.2   
+ Mechanical Products Release 19.2
+ Icepak (includes CFD-Post) Release 19.2 
+ ACIS Geometry Interface Release 19.2
+ AutoCAD Geometry Interface Release 19.2 
+ Catia, Version 4 Geometry Interface Release 19.2
+ Catia, Version 6 Geometry Interface Release 19.2
+ Creo Elements/Direct Modeling Geometry Interface Release 19.2   
+ Creo Parametric Geometry Interface Release 19.2 
+ Inventor Geometry Interface Release 19.2
+ JTOpen Geometry Interface Release 19.2  
+ NX Geometry Interface Release 19.2  
+ Parasolid Geometry Interface  Release 19.2  
+ Solid Edge Geometry Interface Release 19.2  
+ SOLIDWORKS Geometry Interface Release 19.2  
+ ANSYS, Inc. License Manager Release 19.2
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  INPUT FILE NAME              = F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_result.txt
+  OUTPUT FILE NAME             = F:\MyWork\CranePMASystem\datafile\temp\output.txt
+  INITIAL DIRECTORY = F:\MyWork\CranePMASystem\datafile\temp
+
+ RELEASE= Release 19.2         BUILD= 19.2      UP20180808   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file  14:24:18  FEB 13, 2023 CP=      0.172
+
+     1  !!!!!! 疲劳计算文件					  
+     2  finish								  
+     3  resume,F:\MyWork\CranePMASystem\datafile\paramodel\001\totalModel,db	   
+     4  allsel,all  
+     5  /SOLU   
+     6  acel,,9.8   
+     7  solve   
+     8  FINISH  
+     9  /POST1  
+    10  !*  
+    11  /EFACET,1   
+    12  PLNSOL, S,EQV, 0,1.0
+    13  /prep7								  
+    14  /input,F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_fatigue.txt 
+    15  eplot								   
+    16  /eshape,1							
+    17  /view,1,1,2,3						 
+    18  save,F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_result,db,,all
+
+ RUN SETUP PROCEDURE FROM FILE= D:\ANSYS 2019 R2\ANSYS Inc\v192\ANSYS\apdl\start.ans
+
+ /INPUT FILE= D:\ANSYS 2019 R2\ANSYS Inc\v192\ANSYS\apdl\start.ans  LINE=       0
+
+ RESUME ANSYS DATA FROM FILE NAME=F:\MyWork\CranePMASystem\datafile\paramodel\001\totalModel.db                                                                                                                                                                                                       
+
+ *** ANSYS GLOBAL STATUS *** 
+
+ TITLE =                                                                       
+ NUMBER OF ELEMENT TYPES =      4
+        38 ELEMENTS CURRENTLY SELECTED.  MAX ELEMENT NUMBER =        5135
+        46 NODES CURRENTLY SELECTED.     MAX NODE NUMBER =           5125
+ MAXIMUM LINEAR PROPERTY NUMBER        =    5000
+ MAXIMUM REAL CONSTANT SET NUMBER      =      11
+ ACTIVE COORDINATE SYSTEM              =       0  (CARTESIAN)  
+ MAXIMUM COUPLED D.O.F. SET NUMBER     =      20
+ NUMBER OF SPECIFIED CONSTRAINTS       =      18
+
+ INITIAL JOBNAME = file
+ CURRENT JOBNAME = file
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ ACEL=    0.0000      9.8000      0.0000    
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       0.219   TIME= 14:24:18
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.219
+
+                                                                               
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.219   TIME= 14:24:18
+ Present time 0 is less than or equal to the previous time.  Time will   
+ default to 1.                                                           
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000      9.8000      0.0000    
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+ *** NOTE ***                            CP =       0.250   TIME= 14:24:18
+ Predictor is ON by default for structural elements with rotational      
+ degrees of freedom.  Use the PRED,OFF command to turn the predictor     
+ OFF if it adversely affects the convergence.                            
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         6242.4        0.0000        0.0000     |     0.0000       0.29436E-10  -0.24740E+07
+         0.0000        6242.4        0.0000     |   -0.36712E-10    0.0000        0.0000    
+         0.0000        0.0000        6242.4     |    0.24740E+07  -0.93132E-09    0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |    0.11584E+11  -0.71526E-06   0.27234E-07
+                                                |    0.23842E-06   0.20245E+12   0.33723E-07
+                                                |    0.27234E-07   0.33723E-07   0.19605E+12
+
+   TOTAL MASS =  6242.4    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=    0.0000        396.32       0.47154E-14
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+        0.10604E+11  -0.34615E-06   0.27234E-07
+       -0.34615E-06   0.20245E+12   0.45389E-07
+        0.27234E-07   0.45389E-07   0.19507E+12
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+    11   788.838    
+  1000   380.000    
+  5000   5094.32    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 1.024390244E+16 at element 5132.                              
+ Minimum = 1.684265252E+11 at element 1512.                              
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.125   0.007812
+ Time at end of element matrix formulation CP = 0.3125.                  
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =         220,    Maximum wavefront =     24
+  Memory allocated for solver              =     0.150 MB
+  Memory required for in-core solution     =     0.146 MB
+  Memory required for out-of-core solution =     0.146 MB
+
+ *** NOTE ***                            CP =       0.344   TIME= 14:24:18
+ The Sparse Matrix Solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 1.007184941E+16 at node 40 ROTZ.           
+ Sparse solver minimum pivot= 1864.26751 at node 5010 UZ.                
+ Sparse solver minimum pivot in absolute value= 1864.26751 at node 5010  
+ UZ.                                                                     
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.031   0.002604
+     5000        16  BEAM188       0.094   0.005859
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        0.062 MB WRITTEN ON ELEMENT MATRIX FILE: file.emat
+        0.062 MB WRITTEN ON ELEMENT SAVED DATA FILE: file.esav
+        0.062 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        0.812 MB WRITTEN ON RESULTS FILE: file.rst
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.438
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.438
+
+                                                                               
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:24:18
+ Reading results into the database (SET command) will update the current 
+ displacement and force boundary conditions in the database with the     
+ values from the results file for that load set.  Note that any          
+ subsequent solutions will use these values unless action is taken to    
+ either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+ Element faceting set to 1 facets per edge.
+
+ *** NOTE *** Display device has not yet been specified with the /SHOW command.  Display commands ignored. 
+
+ EXIT THE ANSYS POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.438
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.438
+
+                                                                               
+
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ /INPUT FILE= F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_fatigue.txt  LINE=       0
+
+ PARAMETER LIFT_L =     6022.000000    
+
+ PARAMETER LIFT_C_C =    0.5100000000    
+
+ PARAMETER LIFT_C_MIN =     1.150000000    
+
+ *IF  Lift_C_min+Lift_C_C*0.333333      ( =   1.32000     )  LE  
+      2.0                               ( =   2.00000     )  THEN    
+
+ PARAMETER LIFT_C =     1.319999830    
+
+ *ELSE
+
+ *ENDIF
+
+ PARAMETER LIFT_DL =     7949.038976    
+
+ PARAMETER ACC_N =    0.1666665000E-01
+
+ PARAMETER INE_F =     150.5498495    
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.438
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ DELETE ALL SPECIFIED NODAL LOADS FROM NODE         1 TO      5125 BY       1
+
+ NUMBER OF NODAL LOADS DELETED=       0
+
+ ACEL=    0.0000      0.0000      0.0000    
+
+ ADD        THE FOLLOWING NODAL LOADS
+  REAL FACTOR=  1.0000       IMAGINARY FACTOR=  1.0000    
+
+ ACEL=    0.0000      9.8000      0.0000    
+
+ SPECIFIED NODAL LOAD FY   FOR SELECTED NODES      5101 TO     5101 BY        1
+  REAL= -3974.51949       IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD FY   FOR SELECTED NODES      5105 TO     5105 BY        1
+  REAL= -3974.51949       IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD MX   FOR SELECTED NODES      5101 TO     5101 BY        1
+  REAL=-3.135343041E-27   IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD MX   FOR SELECTED NODES      5105 TO     5105 BY        1
+  REAL= 3.135343041E-27   IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD FX   FOR SELECTED NODES      5101 TO     5101 BY        1
+  REAL=  75.2749247       IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD FX   FOR SELECTED NODES      5105 TO     5105 BY        1
+  REAL=  75.2749247       IMAG=  0.00000000    
+
+ WRITE ANSYS LOADS DATA AS FILE=file.s01                                                                                                                                                                                                                                                            
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ DELETE ALL SPECIFIED NODAL LOADS FROM NODE         1 TO      5125 BY       1
+
+ NUMBER OF NODAL LOADS DELETED=       6
+
+ ACEL=    0.0000      0.0000      0.0000    
+
+ ADD        THE FOLLOWING NODAL LOADS
+  REAL FACTOR=  1.0000       IMAGINARY FACTOR=  1.0000    
+
+ ACEL=    0.0000      9.8000      0.0000    
+
+ SPECIFIED NODAL LOAD FY   FOR SELECTED NODES      5120 TO     5120 BY        1
+  REAL= -3974.51949       IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD FY   FOR SELECTED NODES      5125 TO     5125 BY        1
+  REAL= -3974.51949       IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD MX   FOR SELECTED NODES      5120 TO     5120 BY        1
+  REAL=-3.135343041E-27   IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD MX   FOR SELECTED NODES      5125 TO     5125 BY        1
+  REAL= 3.135343041E-27   IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD FX   FOR SELECTED NODES      5120 TO     5120 BY        1
+  REAL=  75.2749247       IMAG=  0.00000000    
+
+ SPECIFIED NODAL LOAD FX   FOR SELECTED NODES      5125 TO     5125 BY        1
+  REAL=  75.2749247       IMAG=  0.00000000    
+
+ WRITE ANSYS LOADS DATA AS FILE=file.s02                                                                                                                                                                                                                                                            
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ DELETE ALL SPECIFIED NODAL LOADS FROM NODE         1 TO      5125 BY       1
+
+ NUMBER OF NODAL LOADS DELETED=       6
+
+ ACEL=    0.0000      0.0000      0.0000    
+
+ ADD        THE FOLLOWING NODAL LOADS
+  REAL FACTOR=  1.0000       IMAGINARY FACTOR=  1.0000    
+
+ ACEL=    0.0000      9.8000      0.0000    
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ *** WARNING ***                         CP =       0.484   TIME= 14:24:18
+ Specified range of 0 to 0 is not permitted.  The F command is ignored.  
+
+ WRITE ANSYS LOADS DATA AS FILE=file.s03                                                                                                                                                                                                                                                            
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.516
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.516
+
+                                                                               
+
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ COMPRESS ELEMENT NUMBERS
+      MAXIMUM ELEMENT NUMBER COMPRESSED FROM      5135 TO        38
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.516
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+ ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:24:18
+
+ PRINTOUT RESUMED BY /GOP
+                                                                         
+ Load step file number 1.  Begin solution ...                            
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       0.516   TIME= 14:24:18
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.516
+
+                                                                               
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.516   TIME= 14:24:18
+ Present time 0 is less than or equal to the previous time.  Time will   
+ default to 1.                                                           
+
+ *** WARNING ***                         CP =       0.516   TIME= 14:24:18
+ Order vector does not match selected elements                           
+  New order vector being created.                                        
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000      9.8000      0.0000    
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+ *** NOTE ***                            CP =       0.547   TIME= 14:24:18
+ Predictor is ON by default for structural elements with rotational      
+ degrees of freedom.  Use the PRED,OFF command to turn the predictor     
+ OFF if it adversely affects the convergence.                            
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         6242.4        0.0000        0.0000     |     0.0000       0.29436E-10  -0.24740E+07
+         0.0000        6242.4        0.0000     |   -0.36712E-10    0.0000        0.0000    
+         0.0000        0.0000        6242.4     |    0.24740E+07  -0.93132E-09    0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |    0.11584E+11  -0.71526E-06   0.27234E-07
+                                                |    0.23842E-06   0.20245E+12   0.33723E-07
+                                                |    0.27234E-07   0.33723E-07   0.19605E+12
+
+   TOTAL MASS =  6242.4    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=    0.0000        396.32       0.47154E-14
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+        0.10604E+11  -0.34615E-06   0.27234E-07
+       -0.34615E-06   0.20245E+12   0.45389E-07
+        0.27234E-07   0.45389E-07   0.19507E+12
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+    11   788.838    
+  1000   380.000    
+  5000   5094.32    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 1.024390244E+16 at element 35.                                
+ Minimum = 1.684265252E+11 at element 16.                                
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.062   0.003906
+ Time at end of element matrix formulation CP = 0.578125.                
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =         220,    Maximum wavefront =     24
+  Memory allocated for solver              =     0.150 MB
+  Memory required for in-core solution     =     0.146 MB
+  Memory required for out-of-core solution =     0.146 MB
+
+ *** NOTE ***                            CP =       0.609   TIME= 14:24:18
+ The Sparse Matrix Solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 1.007184941E+16 at node 40 ROTZ.           
+ Sparse solver minimum pivot= 1864.26751 at node 5010 UZ.                
+ Sparse solver minimum pivot in absolute value= 1864.26751 at node 5010  
+ UZ.                                                                     
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.062   0.003906
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        0.062 MB WRITTEN ON ELEMENT MATRIX FILE: file.emat
+        0.062 MB WRITTEN ON ELEMENT SAVED DATA FILE: file.esav
+        0.062 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        0.812 MB WRITTEN ON RESULTS FILE: file.rst
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.703
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.703
+
+                                                                               
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ SELECT       FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      5000 TO       5000 STEP          1
+
+         16  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ ALSO SELECT  FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      1000 TO       1000 STEP          1
+
+         28  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  NELM      FROM  ELEM  ITEM=COUN           VALUE=  28.0000000    
+
+ *GET  E_MIN     FROM  ELEM  ITEM=NUM  MIN       VALUE=  1.00000000    
+
+ SET PARAMETER DIMENSIONS ON  V_MAX_1 TYPE=ARRA  DIMENSIONS=    28     1     1
+
+ PARAMETER E_NUM =     1.000000000    
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *GET  V_MAX_1   FROM ELEMENT      1 S    X    MAX    VALUE=   30.7347523    
+
+   AT ELEMENT NODE I
+
+ PARAMETER E_NUM =     2.000000000    
+
+ *ENDDO  INDEX= I                               
+
+ EXIT THE ANSYS POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.703
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+ ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:24:18
+
+ PRINTOUT RESUMED BY /GOP
+                                                                         
+ Load step file number 2.  Begin solution ...                            
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       0.734   TIME= 14:24:18
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.734
+
+                                                                               
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.734   TIME= 14:24:18
+ Present time 0 is less than or equal to the previous time.  Time will   
+ default to 1.                                                           
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000      9.8000      0.0000    
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+ *** NOTE ***                            CP =       0.766   TIME= 14:24:18
+ Predictor is ON by default for structural elements with rotational      
+ degrees of freedom.  Use the PRED,OFF command to turn the predictor     
+ OFF if it adversely affects the convergence.                            
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         6242.4        0.0000        0.0000     |     0.0000       0.29436E-10  -0.24740E+07
+         0.0000        6242.4        0.0000     |   -0.36712E-10    0.0000        0.0000    
+         0.0000        0.0000        6242.4     |    0.24740E+07  -0.93132E-09    0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |    0.11584E+11  -0.71526E-06   0.27234E-07
+                                                |    0.23842E-06   0.20245E+12   0.33723E-07
+                                                |    0.27234E-07   0.33723E-07   0.19605E+12
+
+   TOTAL MASS =  6242.4    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=    0.0000        396.32       0.47154E-14
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+        0.10604E+11  -0.34615E-06   0.27234E-07
+       -0.34615E-06   0.20245E+12   0.45389E-07
+        0.27234E-07   0.45389E-07   0.19507E+12
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+    11   788.838    
+  1000   380.000    
+  5000   5094.32    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 1.024390244E+16 at element 35.                                
+ Minimum = 1.684265252E+11 at element 16.                                
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.062   0.003906
+ Time at end of element matrix formulation CP = 0.796875.                
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =         220,    Maximum wavefront =     24
+  Memory allocated for solver              =     0.150 MB
+  Memory required for in-core solution     =     0.146 MB
+  Memory required for out-of-core solution =     0.146 MB
+
+ *** NOTE ***                            CP =       0.828   TIME= 14:24:18
+ The Sparse Matrix Solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 1.007184941E+16 at node 40 ROTZ.           
+ Sparse solver minimum pivot= 1864.26751 at node 5010 UZ.                
+ Sparse solver minimum pivot in absolute value= 1864.26751 at node 5010  
+ UZ.                                                                     
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.125   0.007812
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        0.062 MB WRITTEN ON ELEMENT MATRIX FILE: file.emat
+        0.062 MB WRITTEN ON ELEMENT SAVED DATA FILE: file.esav
+        0.062 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        0.812 MB WRITTEN ON RESULTS FILE: file.rst
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.922
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.922
+
+                                                                               
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ SELECT       FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      5000 TO       5000 STEP          1
+
+         16  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ ALSO SELECT  FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      1000 TO       1000 STEP          1
+
+         28  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  NELM      FROM  ELEM  ITEM=COUN           VALUE=  28.0000000    
+
+ *GET  E_MIN     FROM  ELEM  ITEM=NUM  MIN       VALUE=  1.00000000    
+
+ SET PARAMETER DIMENSIONS ON  V_MAX_2 TYPE=ARRA  DIMENSIONS=    28     1     1
+
+ PARAMETER E_NUM =     1.000000000    
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *GET  V_MAX_2   FROM ELEMENT      1 S    X    MAX    VALUE=   30.9960967    
+
+   AT ELEMENT NODE I
+
+ PARAMETER E_NUM =     2.000000000    
+
+ *ENDDO  INDEX= I                               
+
+ EXIT THE ANSYS POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.922
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+ ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       14:24:18
+
+ PRINTOUT RESUMED BY /GOP
+                                                                         
+ Load step file number 3.  Begin solution ...                            
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       0.922   TIME= 14:24:18
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 1000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(1)=1 IS SUGGESTED FOR NON-CIRCULAR CROSS
+ SECTIONS AND KEYOPT(3)=2 IS ALWAYS SUGGESTED.
+
+ ELEMENT TYPE 5000 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED.
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      0.953
+
+                                                                               
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.953   TIME= 14:24:18
+ Present time 0 is less than or equal to the previous time.  Time will   
+ default to 1.                                                           
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000      9.8000      0.0000    
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+ *** NOTE ***                            CP =       0.953   TIME= 14:24:18
+ Predictor is ON by default for structural elements with rotational      
+ degrees of freedom.  Use the PRED,OFF command to turn the predictor     
+ OFF if it adversely affects the convergence.                            
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         6242.4        0.0000        0.0000     |     0.0000       0.29436E-10  -0.24740E+07
+         0.0000        6242.4        0.0000     |   -0.36712E-10    0.0000        0.0000    
+         0.0000        0.0000        6242.4     |    0.24740E+07  -0.93132E-09    0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |    0.11584E+11  -0.71526E-06   0.27234E-07
+                                                |    0.23842E-06   0.20245E+12   0.33723E-07
+                                                |    0.27234E-07   0.33723E-07   0.19605E+12
+
+   TOTAL MASS =  6242.4    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=    0.0000        396.32       0.47154E-14
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+        0.10604E+11  -0.34615E-06   0.27234E-07
+       -0.34615E-06   0.20245E+12   0.45389E-07
+        0.27234E-07   0.45389E-07   0.19507E+12
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+    11   788.838    
+  1000   380.000    
+  5000   5094.32    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 1.024390244E+16 at element 35.                                
+ Minimum = 1.684265252E+11 at element 16.                                
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.125   0.007812
+ Time at end of element matrix formulation CP = 1.015625.                
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =         220,    Maximum wavefront =     24
+  Memory allocated for solver              =     0.150 MB
+  Memory required for in-core solution     =     0.146 MB
+  Memory required for out-of-core solution =     0.146 MB
+
+ *** NOTE ***                            CP =       1.047   TIME= 14:24:18
+ The Sparse Matrix Solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 1.007184941E+16 at node 40 ROTZ.           
+ Sparse solver minimum pivot= 1864.26751 at node 5010 UZ.                
+ Sparse solver minimum pivot in absolute value= 1864.26751 at node 5010  
+ UZ.                                                                     
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.125   0.007812
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+       11        10  BEAM44        0.000   0.000000
+     1000        12  BEAM188       0.000   0.000000
+     5000        16  BEAM188       0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        0.062 MB WRITTEN ON ELEMENT MATRIX FILE: file.emat
+        0.062 MB WRITTEN ON ELEMENT SAVED DATA FILE: file.esav
+        0.062 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        0.812 MB WRITTEN ON RESULTS FILE: file.rst
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.109
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      1.141
+
+                                                                               
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ SELECT       FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      5000 TO       5000 STEP          1
+
+         16  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ ALSO SELECT  FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      1000 TO       1000 STEP          1
+
+         28  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  NELM      FROM  ELEM  ITEM=COUN           VALUE=  28.0000000    
+
+ *GET  E_MIN     FROM  ELEM  ITEM=NUM  MIN       VALUE=  1.00000000    
+
+ SET PARAMETER DIMENSIONS ON  V_MAX_3 TYPE=ARRA  DIMENSIONS=    28     1     1
+
+ PARAMETER E_NUM =     1.000000000    
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *GET  V_MAX_3   FROM ELEMENT      1 S    X    MAX    VALUE=   29.7618029    
+
+   AT ELEMENT NODE I
+
+ PARAMETER E_NUM =     2.000000000    
+
+ *ENDDO  INDEX= I                               
+
+ EXIT THE ANSYS POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.141
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 19.2     19.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   14:24:18  FEB 13, 2023 CP=      1.141
+
+                                                                               
+
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ ALSO SELECT  FOR ITEM=TYPE COMPONENT=    
+  IN RANGE      1000 TO       1000 STEP          1
+
+         28  ELEMENTS (OF         38  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  NELM      FROM  ELEM  ITEM=COUN           VALUE=  28.0000000    
+
+ SET PARAMETER DIMENSIONS ON  VON_MAX TYPE=ARRA  DIMENSIONS=    28     3     1
+
+ SET PARAMETER DIMENSIONS ON  VON_VON_MAX
+  TYPE=ARRA  DIMENSIONS=       28        1        1
+
+ SET PARAMETER DIMENSIONS ON  VON_VON_MIN
+  TYPE=ARRA  DIMENSIONS=       28        1        1
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ PARAMETER VON_MAX(I,1) =     30.73475230    
+
+ PARAMETER VON_MAX(I,2) =     30.99609671    
+
+ PARAMETER VON_MAX(I,3) =     29.76180295    
+
+ *ENDDO  INDEX= I                               
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ PARAMETER VON_VON_MAX(I) =     30.73475230    
+
+ *DO LOOP ON PARAMETER= J FROM  1.0000     TO  3.0000     BY  1.0000    
+
+ *IF  abs(von_von_max(i))               ( =   30.7348     )  GE  
+      abs(von_max(i,j))                 ( =   30.7348     )  THEN    
+
+ PARAMETER VON_VON_MAX(I) =     30.73475230    
+
+ *ELSE
+
+ *ENDIF
+
+ *ENDDO  INDEX= J                               
+
+ *ENDDO  INDEX= I                               
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ PARAMETER VON_VON_MIN(I) =     30.73475230    
+
+ *DO LOOP ON PARAMETER= J FROM  1.0000     TO  3.0000     BY  1.0000    
+
+ *IF  abs(von_von_min(i))               ( =   30.7348     )  LE  
+      abs(von_max(i,j))                 ( =   30.7348     )  THEN    
+
+ PARAMETER VON_VON_MIN(I) =     30.73475230    
+
+ *ELSE
+
+ *ENDIF
+
+ *ENDDO  INDEX= J                               
+
+ *ENDDO  INDEX= I                               
+
+ SET PARAMETER DIMENSIONS ON  K_FATIGUE
+  TYPE=ARRA  DIMENSIONS=       28        1        1
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *IF  von_von_max(i)                    ( =   30.9961     )  EQ  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ELSE
+
+ PARAMETER K_FATIGUE(I) =    0.9601790582    
+
+ *ENDIF
+
+ *ENDDO  INDEX= I                               
+
+ PARAMETER XS =     63.00000000    
+
+ SET PARAMETER DIMENSIONS ON  V_VON TYPE=ARRA  DIMENSIONS=    28     1     1
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *IF  k_fatigue(i)                      ( =  0.960179     )  LE  
+      0                                 ( =   0.00000     )          
+ *****  AND   *****
+      von_von_max(i)                    ( =   30.9961     )  GT  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ELSEIF  k_fatigue(i)                      ( =  0.960179     )  LE  
+          0                                 ( =   0.00000     )          
+ *****  AND   *****
+          von_von_max(i)                    ( =   30.9961     )  LT  
+          0                                 ( =   0.00000     )  THEN    
+
+ *ELSEIF  k_fatigue(i)                      ( =  0.960179     )  GT  
+          0                                 ( =   0.00000     )          
+ *****  AND   *****
+          von_von_max(i)                    ( =   30.9961     )  GT  
+          0                                 ( =   0.00000     )  THEN    
+
+ PARAMETER V_VON(I) =     369.2111904    
+
+ *ELSEIF  k_fatigue(i)                      ( =  0.960179     )  GT  
+          0                                 ( =   0.00000     )          
+ *****  AND   *****
+          von_von_max(i)                    ( =   30.9961     )  LT  
+          0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ *ENDDO  INDEX= I                               
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *IF  v_von(i)                          ( =   369.211     )  GT  
+      412.5                             ( =   412.500     )  THEN    
+
+ *ENDIF
+
+ *ENDDO  INDEX= I                               
+
+ SET PARAMETER DIMENSIONS ON  V_RATIO TYPE=ARRA  DIMENSIONS=    28     1     1
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *IF  v_von(i)                          ( =   369.211     )  EQ  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ELSE
+
+ PARAMETER V_RATIO(I) =    0.8395221359E-01
+
+ *ENDIF
+
+ *ENDDO  INDEX= I                               
+
+ PARAMETER VMAX_RATIO =    0.8395221359E-01
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *IF  vmax_ratio                        ( =  0.839522E-01 )  GE  
+      v_ratio(i)                        ( =  0.839522E-01 )  THEN    
+
+ PARAMETER VMAX_RATIO =    0.8395221359E-01
+
+ *ELSE
+
+ *ENDIF
+
+ *ENDDO  INDEX= I                               
+
+ PARAMETER E_NUM =     1.000000000    
+
+ *DO LOOP ON PARAMETER= I FROM  1.0000     TO  28.000     BY  1.0000    
+
+ *IF  v_ratio(i)                        ( =  0.839522E-01 )  GE  
+      0.9*vmax_ratio                    ( =  0.985278E-01 )          
+ *****  AND   *****
+      v_ratio(i)                        ( =  0.839522E-01 )  LT  
+      1.0*vmax_ratio                    ( =  0.109475     )  THEN    
+
+ *ELSEIF  v_ratio(i)                        ( =  0.839522E-01 )  GE  
+          0.8*vmax_ratio                    ( =  0.875803E-01 )          
+ *****  AND   *****
+          v_ratio(i)                        ( =  0.839522E-01 )  LT  
+          0.9*vmax_ratio                    ( =  0.985278E-01 )  THEN    
+
+ *ELSEIF  v_ratio(i)                        ( =  0.839522E-01 )  GE  
+          0.7*vmax_ratio                    ( =  0.766328E-01 )          
+ *****  AND   *****
+          v_ratio(i)                        ( =  0.839522E-01 )  LT  
+          0.8*vmax_ratio                    ( =  0.875803E-01 )  THEN    
+ ELEM 1 COLOR YELLOW                                  
+
+ *ELSEIF  v_ratio(i)                        ( =  0.839522E-01 )  GE  
+          0.6*vmax_ratio                    ( =  0.656852E-01 )          
+ *****  AND   *****
+          v_ratio(i)                        ( =  0.839522E-01 )  LT  
+          0.7*vmax_ratio                    ( =  0.766328E-01 )  THEN    
+
+ *ELSE
+
+ *ENDIF
+
+ PARAMETER E_NUM =     2.000000000    
+
+ *ENDDO  INDEX= I                               
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.172
+
+
+
+ RED=100% GREEN=100% BLUE=100%
+  for color index  0.
+
+ RED=80% GREEN=80% BLUE=80%
+  for color index 13.
+
+ RED=60% GREEN=60% BLUE=60%
+  for color index 14.
+
+ RED=0% GREEN=0% BLUE=0%
+  for color index 15.
+
+ DISTANCE FOR WINDOW 1  0.4500E+05
+
+  ELEMENT OUTLINE STYLE FOR WINDOW 1 IS -1  0=DEFAULT, 1=ALTERNATE, -1=NONE
+
+ view point for window  1    1.0000      1.0000      1.0000    
+
+ ELEMENT DISPLAYS USING REAL CONSTANT OR SECTION DATA WITH FACTOR     1.00
+
+ AUTOMATIC SCALING FOR WINDOW 1
+    DISTANCE AND FOCUS POINT AUTOMATICALLY CALCULATED
+
+ GRAPHICS FILE PIXEL RESOLUTION =    350
+
+ /SHOW SWITCH PLOTS TO  JPEG        - RASTER MODE.
+
+ PRODUCE ELEMENT PLOT IN DSYS =   0
+
+ CUMULATIVE DISPLAY NUMBER   1 WRITTEN TO FILE file000.jpg       - RASTER MODE.
+ DISPLAY TITLE= 
+                                                                         
+
+ *** NOTE ***
+ ANSYS JPEG software is based in part on the work of the Independent JPEG Group.
+ IJG Version 6b  27-Mar-1998  Copyright (C) 1998, Thomas G. Lane
+
+ /RENAME FILE FROM FILE= file000.jpg
+   TO FILE= F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_fatigue.jpg
+ FILE file000.jpg  RENAMED TO F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_fatigue.jpg
+
+ ELEMENT DISPLAYS USING REAL CONSTANT OR SECTION DATA WITH FACTOR     1.00
+
+ view point for window  1    1.0000      2.0000      3.0000    
+
+ SAVE ALL MODEL, SOLUTION AND POST DATA.
+
+ ALL CURRENT ANSYS DATA WRITTEN TO FILE NAME= F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_result.db
+  FOR POSSIBLE RESUME FROM THIS POINT
+
+ ***** END OF INPUT ENCOUNTERED *****
+
+ PURGE ALL SOLUTION AND POST DATA
+ SAVE ALL MODEL DATA
+
+ ALL CURRENT ANSYS DATA WRITTEN TO FILE NAME= file.db
+  FOR POSSIBLE RESUME FROM THIS POINT
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          7
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
++--------------------- A N S Y S   S T A T I S T I C S ------------------------+
+
+Release: Release 19.2       Build: 19.2       Update: UP20180808   Platform: WINDOWS x64 
+Date Run: 02/13/2023   Time: 14:24     Process ID: 832
+Operating System: Windows 8  (Build: 9200)
+
+Processor Model: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
+
+Compiler: Intel(R) FORTRAN Compiler Version 17.0.4  (Build: 20170411)
+          Intel(R) C/C++ Compiler Version 17.0.4  (Build: 20170411)
+          Intel(R) Math Kernel Library Version 2017.0.3 Product Build 20170413
+
+Number of machines requested            :    1
+Total number of cores available         :   12
+Number of physical cores available      :    6
+Number of processes requested           :    1
+Number of threads per process requested :    2
+Total number of cores requested         :    2 (Shared Memory Parallel)                    
+
+GPU Acceleration: Not Requested
+
+Job Name: file
+Input File: F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_result.txt
+Working Directory: F:\MyWork\CranePMASystem\datafile\temp
+
+Total CPU time for main thread                    :        0.8 seconds
+Total CPU time summed for all threads             :        1.3 seconds
+
+Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
+Elapsed time spent solution - preprocessing       :        0.0 seconds
+Elapsed time spent computing solution             :        0.3 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+ 
+Equation solver used                              :            Sparse (symmetric)
+
+Maximum total memory used                         :       50.0 MB
+Maximum total memory allocated                    :     2112.0 MB
+Total physical memory available                   :         16 GB
+
+Total amount of I/O written to disk               :        0.0 GB
+Total amount of I/O read from disk                :        0.0 GB
+
++------------------ E N D   A N S Y S   S T A T I S T I C S -------------------+
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                            ANSYS RUN COMPLETED                            |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Ansys Release 19.2          Build 19.2         UP20180808     WINDOWS x64 |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
+ | Maximum Database Used       2 MB    Maximum Scratch Memory Used     48 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =          1.266       Time  =  14:24:18        |
+ |        Elapsed Time (sec) =          5.000       Date  =  02/13/2023      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*

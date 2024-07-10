@@ -1,0 +1,18 @@
+!!!!!! 疲劳计算文件					   
+finish								   
+resume,F:\MyWork\CranePMASystem\datafile\paramodel\001\totalModel,db	   
+allsel,all
+/SOLU  
+acel,,9.8
+solve
+FINISH  
+/POST1  
+!*  
+/EFACET,1     
+PLNSOL, S,EQV, 0,1.0  
+/prep7								   
+/input,F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_fatigue.txt
+eplot								       
+/eshape,1							       
+/view,1,1,2,3						       
+save,F:\MyWork\CranePMASystem\datafile\paramodel\001\estimate_result,db,,all  

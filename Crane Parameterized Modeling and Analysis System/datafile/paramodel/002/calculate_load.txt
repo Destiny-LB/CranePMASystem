@@ -1,0 +1,37 @@
+!载荷文件
+allsel
+/solu										
+fdele	,	all	,	all	,	                
+Acel	,	0	,	9.8	,	0               
+fcum	,	add	,			                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!小车起升动载(start)!
+Lift_L=500+500+500
+Lift_DL=9.8*1.235*Lift_L
+f	,	xiaochewei1	,	fy	,	0-Lift_DL/4	
+f	,	xiaochewei2	,	fy	,	0-Lift_DL/4	
+f	,	xiaochewei3	,	fy	,	0-Lift_DL/4	
+f	,	xiaochewei4	,	fy	,	0-Lift_DL/4	
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!小车起升动载(end)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!--附加弯矩(start)：只有双梁才会有附加弯矩
+LX=245
+f	,	xiaochewei1	,	mx	,	Lift_DL*LX/4	
+f	,	xiaochewei2	,	mx	,	Lift_DL*LX/4	
+f	,	xiaochewei3	,	mx	,	0-Lift_DL*LX/4	
+f	,	xiaochewei4	,	mx	,	0-Lift_DL*LX/4	
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!附加弯矩(end)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+fcum	,	add	,			                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!小车惯性力(start)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+fcum	,	add	,			                
+Acc_N=0.333333/20
+*if,	1.5*Acc_N,le,1.2,then					
+Ine_F=1.5*Lift_L*Acc_N						
+*else 								
+Ine_F=1.2*Lift_L					
+*endif					
+f	,	xiaochewei1	,	fx	,	Ine_F/4		
+f	,	xiaochewei2	,	fx	,	Ine_F/4		
+f	,	xiaochewei3	,	fx	,	Ine_F/4		
+f	,	xiaochewei4	,	fx	,	Ine_F/4		
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!小车惯性力(end)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+allsel								
+solve								

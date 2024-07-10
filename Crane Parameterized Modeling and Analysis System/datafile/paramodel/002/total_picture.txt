@@ -1,0 +1,20 @@
+/RGB,INDEX,100,100,100, 0	
+/RGB,INDEX, 80, 80, 80,13	
+/RGB,INDEX, 60, 60, 60,14	
+/RGB,INDEX, 0, 0, 0,15 	
+/replot	
+/dist,1,30000     
+/GLINE,1,-1	
+/view,1,1,1,1    !!!!!!!!!!!!确定显示视角	
+/AUTO,1 
+/ REP, FAST 
+/eshape,1        !!!!!!!!!!!!显示实际形状	
+/replot
+/GFILE,490,	
+/GLINE,1,-1	
+/GRAPHICS,POWER		
+/show,jpeg,,	
+EPLOT	
+/show,close		
+/RENAME,file000, jpg,,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\totalModel,jpg, 	
+finish		

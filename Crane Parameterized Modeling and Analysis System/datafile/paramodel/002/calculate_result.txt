@@ -1,0 +1,19 @@
+!载荷计算文件
+finish
+resume,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\totalModel,db
+/prep7
+allsel,all
+/SOLU  
+acel,,9.8
+solve
+FINISH  
+/POST1  
+!*  
+/EFACET,1     
+PLNSOL, S,EQV, 0,1.0  
+/input,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_load.txt
+/input,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_picture.txt
+eplot
+/eshape,1
+/view,1,1,2,3
+save,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_result,db,,all

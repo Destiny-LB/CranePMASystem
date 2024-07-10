@@ -1,0 +1,285 @@
+!                     疲劳计算结果		
+!***************首先计算所有的载荷****************		
+!!!!!!!!!!!!!!!!!!!小车起升动载(start)!!!!!!!!!!		
+!!!!!!!!!!!!!额定起升载荷!!!!!!!!!!!!!					
+Lift_L=500+500+500
+!!!!!!!!!!!!!起升动载系数(HC3级别)!!!!!!!!!!!!!			
+Lift_C_C=0.51											
+Lift_C_min=1.15											
+*if,Lift_C_min+Lift_C_C*0.333333,le,2.0,then		
+Lift_C=Lift_C_min+Lift_C_C*0.333333					
+*else 													
+Lift_C=2.0												
+*endif													
+Lift_DL=Lift_C*Lift_L									
+!!!!!!!!!!!!!!!!!!!小车起升动载(end)!!!!!!!!!!			
+														
+!!!!!!!!!!!!!!!!!!!!!!!!!小车惯性力(start)!!!!!!!!!!	
+Acc_N=0.333333/20							
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!惯性力
+Ine_F=1.5*Lift_L*Acc_N									
+!!!!!!!!!!!!!!!!!!!!!!!!!小车惯性力(end)!!!!!!!!!!		
+														
+!***************加载开始****************				
+!!!!!!!!!!清除所有载荷!!!!!!!!!!						
+/solu													
+allsel
+fdele	,	all	,	all	,								
+Acel	,	0	,	0	,	0								
+!!!!!!!!!!加载!!!!!!!!!!									
+fcum	,	add	,											
+Acel	,	0	,	9.8	,	0								
+f	,	PL5	,	fy	,	0-Lift_DL/4			
+f	,	PL6	,	fy	,	0-Lift_DL/4			
+f	,	PL7	,	fy	,	0-Lift_DL/4			
+f	,	PL8	,	fy	,	0-Lift_DL/4			
+f	,	PL5	,	mx	,	0-Lift_DL*LX/4		
+f	,	PL6	,	mx	,	Lift_DL*LX/4		
+f	,	PL7	,	mx	,	0-Lift_DL*LX/4		
+f	,	PL8	,	mx	,	Lift_DL*LX/4		
+f	,	PL5	,	fx	,	Ine_F/4				
+f	,	PL6	,	fx	,	Ine_F/4				
+f	,	PL7	,	fx	,	Ine_F/4				
+f	,	PL8	,	fx	,	Ine_F/4				
+Lswrite	,	1
+!!!!!!!载荷步完成                                         
+     													
+allsel
+fdele	,	all	,	all	,								
+Acel	,	0	,	0	,	0								
+!!!!!!!!!!加载!!!!!!!!!!									
+fcum	,	add	,											
+Acel	,	0	,	9.8	,	0								
+f	,	PL1	,	fy	,	0-Lift_DL/4			
+f	,	PL2	,	fy	,	0-Lift_DL/4			
+f	,	PL3	,	fy	,	0-Lift_DL/4			
+f	,	PL4	,	fy	,	0-Lift_DL/4			
+f	,	PL1	,	mx	,	0-Lift_DL*LX/4		
+f	,	PL2	,	mx	,	Lift_DL*LX/4		
+f	,	PL3	,	mx	,	0-Lift_DL*LX/4		
+f	,	PL4	,	mx	,	Lift_DL*LX/4		
+f	,	PL1	,	fx	,	Ine_F/4				
+f	,	PL2	,	fx	,	Ine_F/4				
+f	,	PL3	,	fx	,	Ine_F/4				
+f	,	PL4	,	fx	,	Ine_F/4				
+Lswrite	,	2
+!!!!!!!载荷步完成                                         
+     													
+allsel
+fdele	,	all	,	all	,								
+Acel	,	0	,	0	,	0								
+!!!!!!!!!!加载!!!!!!!!!!									
+fcum	,	add	,											
+Acel	,	0	,	9.8	,	0								
+f	,	PL9	,	fy	,	0-Lift_DL/4			
+f	,	PL10	,	fy	,	0-Lift_DL/4			
+f	,	PL11	,	fy	,	0-Lift_DL/4			
+f	,	PL12	,	fy	,	0-Lift_DL/4			
+f	,	PL9	,	mx	,	0-Lift_DL*LX/4		
+f	,	PL10	,	mx	,	Lift_DL*LX/4		
+f	,	PL11	,	mx	,	0-Lift_DL*LX/4		
+f	,	PL12	,	mx	,	Lift_DL*LX/4		
+f	,	PL9	,	fx	,	Ine_F/4				
+f	,	PL10	,	fx	,	Ine_F/4				
+f	,	PL11	,	fx	,	Ine_F/4				
+f	,	PL12	,	fx	,	Ine_F/4				
+Lswrite	,	3
+!!!!!!!载荷步完成                                         
+     													
+!!!在计算结束之后，开始以下步骤：	
+!!!压缩单元编号						
+/prep7								
+allsel								
+numcmp,elem							
+finish								
+									
+!!!计算每一个载荷步（开始）                                  
+/solu    												
+allsel    												
+lssolve,1
+finish													
+/post1													
+!!!选中beam188单元,主梁：5000；端梁1000；支腿：2000；下横梁：3000；连接箱体：4000
+esel,s,type,,5000
+esel,a,type,,1000
+*get,Nelm,elem,0,count									
+*get,E_min,elem,0,num,min								
+*dim,v_max_1,,Nelm								
+!!!得到同一beam188单元的最大应力与最小应力                    
+eplot													
+E_num=E_min												
+*do,i,1,Nelm,1											
+*get,v_max_1(i),secr,E_num,s,x,max				
+E_num=ELnext(E_num)										
+*enddo													
+finish													
+															
+!!!计算每一个载荷步（开始）                                  
+/solu    												
+allsel    												
+lssolve,2
+finish													
+/post1													
+!!!选中beam188单元,主梁：5000；端梁1000；支腿：2000；下横梁：3000；连接箱体：4000
+esel,s,type,,5000
+esel,a,type,,1000
+*get,Nelm,elem,0,count									
+*get,E_min,elem,0,num,min								
+*dim,v_max_2,,Nelm								
+!!!得到同一beam188单元的最大应力与最小应力                    
+eplot													
+E_num=E_min												
+*do,i,1,Nelm,1											
+*get,v_max_2(i),secr,E_num,s,x,max				
+E_num=ELnext(E_num)										
+*enddo													
+finish													
+															
+!!!计算每一个载荷步（开始）                                  
+/solu    												
+allsel    												
+lssolve,3
+finish													
+/post1													
+!!!选中beam188单元,主梁：5000；端梁1000；支腿：2000；下横梁：3000；连接箱体：4000
+esel,s,type,,5000
+esel,a,type,,1000
+*get,Nelm,elem,0,count									
+*get,E_min,elem,0,num,min								
+*dim,v_max_3,,Nelm								
+!!!得到同一beam188单元的最大应力与最小应力                    
+eplot													
+E_num=E_min												
+*do,i,1,Nelm,1											
+*get,v_max_3(i),secr,E_num,s,x,max				
+E_num=ELnext(E_num)										
+*enddo													
+finish													
+															
+/prep7														
+!!!选中beam188单元											
+esel,a,type,,1000
+*get,Nelm,elem,0,count										
+*dim,von_max,,Nelm,3										
+*dim,von_von_max,,Nelm									
+*dim,von_von_min,,Nelm									
+*do,i,1,Nelm												
+von_max(i,1)=v_max_1(i)									
+von_max(i,2)=v_max_2(i)									
+von_max(i,3)=v_max_3(i)									
+*enddo	!!!!!!*do,i,1,Nelm								
+*do,i,1,Nelm												
+von_von_max(i)=von_max(i,1)								
+*do,j,1,3,1												
+*if,abs(von_von_max(i)),ge,abs(von_max(i,j)),then			
+von_von_max(i)=von_von_max(i)								
+*else														
+von_von_max(i)=von_max(i,j)								
+*endif													
+*enddo													
+*enddo													
+*do,i,1,Nelm												
+von_von_min(i)=von_max(i,1)								
+*do,j,1,3,1												
+*if,abs(von_von_min(i)),le,abs(von_max(i,j)),then			
+von_von_min(i)=von_von_min(i)								
+*else														
+von_von_min(i)=von_max(i,j)								
+*endif													
+*enddo													
+*enddo													
+															
+*dim,k_fatigue,,Nelm										
+!!!将极值应力之间的比值K保存在数组k_fatigue(i)			
+*do,i,1,Nelm												
+*if,von_von_max(i),eq,0,then								
+k_fatigue(i)=1											
+*else														
+k_fatigue(i)=von_von_min(i)/von_von_max(i)				
+*endif													
+*enddo													
+															
+xs=63														
+															
+*dim,v_von,,Nelm											
+!!!确定疲劳许用应力										
+*do,i,1,Nelm												
+*if,k_fatigue(i),le,0,and,von_von_max(i),gt,0,then		
+v_von(i)=xs*5/(3-2*k_fatigue(i))							
+*elseif,k_fatigue(i),le,0,and,von_von_max(i),lt,0			
+v_von(i)=xs*2/(1-k_fatigue(i))							
+*elseif,k_fatigue(i),gt,0,and,von_von_max(i),gt,0			
+v_von(i)=1.66*xs/(1-(1-1.66*xs/412.5)*k_fatigue(i))		
+*elseif,k_fatigue(i),gt,0,and,von_von_max(i),lt,0			
+v_von(i)=1.2*1.66*xs/(1-(1-1.66*xs/412.5)*k_fatigue(i))	
+*endif													
+*enddo													
+*do,i,1,Nelm												
+*if,v_von(i),gt,412.5,then								
+v_von(i)=412.5											
+*endif													
+*enddo													
+															
+*dim,v_ratio,,Nelm								  		
+!!!确定每一个载荷步的所有比例系数						
+*do,i,1,Nelm										  	
+*if,v_von(i),eq,0,then							  		
+v_ratio(i)=1									  		
+*else											  		
+v_ratio(i)=abs(von_von_max(i)/v_von(i))	  				
+*endif											  		
+*enddo											  		
+													  	
+vmax_ratio=v_ratio(1)									
+*do,i,1,Nelm											
+*if,vmax_ratio,ge,v_ratio(i),then						
+vmax_ratio=vmax_ratio				  					
+*else								  					
+vmax_ratio=v_ratio(i)				  					
+*endif						  							
+*enddo						  							
+													  	
+!!!给出疲劳趋势图														
+E_num=E_min																
+*do,i,1,Nelm															
+*if,v_ratio(i),ge,0.9*vmax_ratio,and,v_ratio(i),lt,1.0*vmax_ratio,then	
+/color,elem,12,E_num													
+*elseif,v_ratio(i),ge,0.8*vmax_ratio,and,v_ratio(i),lt,0.9*vmax_ratio	
+/color,elem,11,E_num													
+*elseif,v_ratio(i),ge,0.7*vmax_ratio,and,v_ratio(i),lt,0.8*vmax_ratio	
+/color,elem,10,E_num													
+*elseif,v_ratio(i),ge,0.6*vmax_ratio,and,v_ratio(i),lt,0.7*vmax_ratio	
+/color,elem,9,E_num														
+*elseif,v_ratio(i),ge,0.5*vmax_ratio,and,v_ratio(i),lt,0.6*vmax_ratio	
+/color,elem,8,E_num														
+*elseif,v_ratio(i),ge,0.4*vmax_ratio,and,v_ratio(i),lt,0.5*vmax_ratio	
+/color,elem,7,E_num														
+*elseif,v_ratio(i),ge,0.3*vmax_ratio,and,v_ratio(i),lt,0.4*vmax_ratio	
+/color,elem,6,E_num														
+*elseif,v_ratio(i),ge,0.2*vmax_ratio,and,v_ratio(i),lt,0.3*vmax_ratio	
+/color,elem,5,E_num														
+*else																	
+/color,elem,4,E_num														
+*endif																	
+E_num=ELnext(E_num)			  											
+*enddo						  											
+/replot						  											
+finish						  											
+																		
+/RGB,INDEX,100,100,100, 0									
+/RGB,INDEX, 80, 80, 80,13									
+/RGB,INDEX, 60, 60, 60,14									
+/RGB,INDEX, 0, 0, 0,15 										
+/replot														
+/dist,1,45000     !!!!!可去掉								
+/GLINE,1,-1													
+/view,1,1,1,1    !!!!!!!!!!!!确定显示视角					
+/eshape,1        !!!!!!!!!!!!显示实际形状					
+/replot														
+/AUTO,1 
+/ REP, FAST 
+/GFILE,350,													
+/show,jpeg,,												
+EPLOT														
+/show,close													
+/RENAME,file000, jpg,, F:\Destiny-work\CranePMASystem\datafile\paramodel\002\estimate_fatigue, jpg, 		

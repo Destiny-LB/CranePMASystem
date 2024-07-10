@@ -1,0 +1,121 @@
+!得到截图文件	
+/RGB,INDEX,100,100,100, 0	
+/RGB,INDEX, 80, 80, 80,13	
+/RGB,INDEX, 60, 60, 60,14	
+/RGB,INDEX, 0, 0, 0,15 	
+/replot	
+esel,	s,	type	,,	1		
+esel,	a,	type	,,	5000	
+esel,	a,	type	,,	1000	
+allsel	
+/solu	
+/post1	
+!plnsol,s,eqv     !!!!!!!!!!!!梯度线显示节点结果	
+/PLOPTS,INFO,3   !!!!!!!!!!!!让应力值显示带在图形的下面	
+/dist,1,40000     !!!!!可去掉	
+/GLINE,1,-1	
+/view,1,1,1,1    !!!!!!!!!!!!确定显示视角	
+/eshape,1        !!!!!!!!!!!!显示实际形状	
+/replot
+/AUTO,1 
+/ REP, FAST 
+/GFILE,350,	
+/GLINE,1,-1	
+/GRAPHICS,POWER		
+/show,jpeg,,	
+PLNSOL,s,EQV,0,1.0 !等效应力	
+/show,close		
+/POST1                   !进入通用后处理器	
+PLNSOL,s,EQV,0,1.0 !等效应力	
+ *GET,Nelm,ELEM,0,COUNT      !提取单元总数至Nelm中	
+ *Dim,_vonmax,Array,Nelm+1,2  !定义一个(Nelm+1,2)的数组_vonmax	
+ *VFILL,_vonmax(1,1),RAMP,1,1 !数组_vonmax的第一列为1,2,3,4....(1+(n-1)*1)
+*GET,EL,ELEM,0,NUM,MIN	
+*do,i,1,Nelm,1	
+_vonmax(i,1)=EL	
+EL=ELNEXT(EL)
+*enddo	
+ *do,i,1,Nelm,1              !以i为变量的do循环开始     
+ ESEL,S,,,_vonmax(i,1)                !选择i单元(此时在后处理器情况下)   	
+/replot                    !显示i单元(此时在后处理器情况下)  	
+*get,_vonmax(I,2),plnsol,0,max   !提取单元应力值至_vonmax(i,2)	
+*enddo                            !以i为变量的do循环结束	
+*vscfun,_vonmax(Nelm+1,2),max,_vonmax(1,2)  !提取数组第二列的最大元素值	
+ *do,i,1,Nelm,1                              !以i为变量的do循环开始	
+*if, _vonmax(i,2),eq,_vonmax(Nelm+1,2),then !条件语句提取最大应力单元编号	
+/pbc,f,,1        !!!!!!!!!!!!显示加的载荷	
+_vonmax(Nelm+1,1)=_vonmax(i,1)
+*else
+*endif 	
+*enddo   		
+*Dim,_maxvalue,Array,1,2                 !定义数组(单元编号，最大应力值)	
+_maxvalue(1,1)=_vonmax(Nelm+1,1)
+_maxvalue(1,2)=_vonmax(Nelm+1,2)
+allsel                                   !选择所有单元	
+/replot                                  !显示所有单元	
+/COM                                        !输出数据
+/OUT,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_stress,txt,,                 !输出将添加到文件末端	
+*VWRITE,_maxvalue(1,2) 		
+(F8.3,)	
+/COM 
+/OUT
+*del,,_prm                  !清空以_开头的数组	
+esel,	s,	type	,,	1		
+esel,	a,	type	,,	5000	
+esel,	a,	type	,,	1000	
+allsel	
+/solu	
+/post1	
+!plnsol,s,eqv     !!!!!!!!!!!!梯度线显示节点结果	
+/PLOPTS,INFO,3   !!!!!!!!!!!!让应力值显示带在图形的下面	
+/dist,1,40000     !!!!!可去掉	
+/GLINE,1,-1	
+/view,1,1,1,1    !!!!!!!!!!!!确定显示视角	
+/eshape,1        !!!!!!!!!!!!显示实际形状	
+/replot
+/AUTO,1 
+/ REP, FAST 
+/GFILE,350,	
+/GLINE,1,-1	
+/GRAPHICS,POWER		
+/show,jpeg,,	
+PLNSOL,u,sum,0,1.0 !位移矢量和 	
+/show,close		
+/POST1                   !进入通用后处理器	
+PLNSOL,u,sum,0,1.0 !位移矢量和 	
+ *GET,Nelm,ELEM,0,COUNT      !提取单元总数至Nelm中	
+ *Dim,_vonmax,Array,Nelm+1,2  !定义一个(Nelm+1,2)的数组_vonmax	
+ *VFILL,_vonmax(1,1),RAMP,1,1 !数组_vonmax的第一列为1,2,3,4....(1+(n-1)*1)
+*GET,EL,ELEM,0,NUM,MIN	
+*do,i,1,Nelm,1	
+_vonmax(i,1)=EL	
+EL=ELNEXT(EL)
+*enddo	
+ *do,i,1,Nelm,1              !以i为变量的do循环开始     
+ ESEL,S,,,_vonmax(i,1)                !选择i单元(此时在后处理器情况下)   	
+/replot                    !显示i单元(此时在后处理器情况下)  	
+*get,_vonmax(I,2),plnsol,0,max   !提取单元应力值至_vonmax(i,2)	
+*enddo                            !以i为变量的do循环结束	
+*vscfun,_vonmax(Nelm+1,2),max,_vonmax(1,2)  !提取数组第二列的最大元素值	
+ *do,i,1,Nelm,1                              !以i为变量的do循环开始	
+*if, _vonmax(i,2),eq,_vonmax(Nelm+1,2),then !条件语句提取最大应力单元编号	
+/pbc,f,,1        !!!!!!!!!!!!显示加的载荷	
+_vonmax(Nelm+1,1)=_vonmax(i,1)
+*else
+*endif 	
+*enddo   		
+*Dim,_maxvalue,Array,1,2                 !定义数组(单元编号，最大应力值)	
+_maxvalue(1,1)=_vonmax(Nelm+1,1)
+_maxvalue(1,2)=_vonmax(Nelm+1,2)
+allsel                                   !选择所有单元	
+/replot                                  !显示所有单元	
+/COM                                        !输出数据
+/OUT,F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_displacement,txt,,                 !输出将添加到文件末端	
+*VWRITE,_maxvalue(1,2) 		
+(F8.3,)	
+/COM 
+/OUT
+*del,,_prm                  !清空以_开头的数组	
+/RENAME,file000, jpg,, F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_stress, jpg, 	
+/RENAME,file001, jpg,, F:\Destiny-work\CranePMASystem\datafile\paramodel\002\calculate_displacement, jpg, 	
+finish		

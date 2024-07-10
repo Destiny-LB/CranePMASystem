@@ -1,0 +1,264 @@
+!!下横梁节点与单元的创建以及材料单元类型的定义
+/prep7
+ZL_1_DENS=0.0000078
+et,5000,beam188
+mat,5000
+MP,EX,5000,210000
+MP,PRXY,5000,0.3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!引用全局变量来改密度
+MP,DENSITY,5000,ZL_1_DENS
+	!!!!方向关键点
+n,5000,-11007,5016 ,-1244
+	!!!!开始写变截面坐标
+n,5001,-11007,16 ,-1244
+n,5101,-10350,16 ,-1244
+n,5105,-10050,16 ,-1244
+n,5002,-9750,16 ,-1244
+n,5010,-6000,16 ,-1244
+n,51,-150,16 ,-1244
+n,5015,0,16 ,-1244
+n,52,150,16 ,-1244
+n,5020,6000,16 ,-1244
+n,5025,9750,16 ,-1244
+n,5120,9800,16 ,-1244
+n,5125,10100,16 ,-1244
+n,5026,11007,16 ,-1244
+!!读入定义的截面以及截面的偏移和变截面的定义
+!!单元（0+1)
+	sectype,	5001,	beam,	mesh
+	secoffset,user,	0,0
+	secread,	ZL_1_Sec_5001,	sect	,,	mesh
+!!单元（1+1)
+	sectype,	5002,	beam,	mesh
+	secoffset,user,	0,0
+	secread,	ZL_1_Sec_5002,	sect	,,	mesh
+!!单元4
+	sectype,	5003,	beam,	mesh
+	secoffset,user,	0,0.5*(-587)
+	secread,	ZL_1_Sec_5003,	sect	,,	mesh
+	sectype,	5004,	      	taper
+	secdata,	5003,	nx(5001),	ny(5001),  nz(5001)
+	secdata,	5002,	nx(5002),	ny(5002),    nz(5002)
+	sectype,	5005,	      	taper
+	secdata,	5002,	nx(5025),	ny(5025),  nz(5025)
+	secdata,	5003,	nx(5026),	ny(5026),    nz(5026)
+!!!!!!!!!!!!!!!!!!!!!!!单元的连接
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5004
+en,5001,5001,5101,5000
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5004
+en,5101,5101,5105,5000
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5004
+en,5105,5105,5002,5000
+!!!!!!!!!!!!!!!!!!!!!!!单元的连接
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5005
+en,5025,5025,5120,5000
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5005
+en,5120,5120,5125,5000
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5005
+en,5125,5125,5026,5000
+!!!!!!!!!!!!!!插入节点定义
+n,1+(5010),2000*1+(-6000),16 ,-1244
+n,2+(5010),2000*2+(-6000),16 ,-1244
+!!!!!!!!!!!!!!准备连接element
+type,5000
+mat,5000
+secnum,5001
+*if,2,lt,2,then
+en,5010,5010,1+5010,5000
+en,1+5010,1+5010,51,5000
+*else
+en,5010,5010,1+5010,5000
+*do,k1,1,2-1
+en,k1+5010,k1+5010,k1+1+5010,5000
+*enddo
+en,2+5010,2+5010,51,5000
+*endif
+*if,2,lt,2,then
+en,5010,5010,1+5010,5000
+en,1+5010,1+5010,51,5000
+*else
+en,5010,5010,1+5010,5000
+*do,k1,1,2-1
+en,k1+5010,k1+5010,k1+1+5010,5000
+*enddo
+en,2+5010,2+5010,51,5000
+*endif
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5001
+en,51,51,5015,5000
+!!!!!!!!!!!!!!多段单元连接
+type,5000
+mat,5000
+secnum,5001
+en,5015,5015,52,5000
+!!!!!!!!!!!!!!插入节点定义
+n,1+(52),2000*1+(150),16 ,-1244
+n,2+(52),2000*2+(150),16 ,-1244
+!!!!!!!!!!!!!!准备连接element
+type,5000
+mat,5000
+secnum,5001
+*if,2,lt,2,then
+en,52,52,1+52,5000
+en,1+52,1+52,5020,5000
+*else
+en,52,52,1+52,5000
+*do,k1,1,2-1
+en,k1+52,k1+52,k1+1+52,5000
+*enddo
+en,2+52,2+52,5020,5000
+*endif
+*if,2,lt,2,then
+en,52,52,1+52,5000
+en,1+52,1+52,5020,5000
+*else
+en,52,52,1+52,5000
+*do,k1,1,2-1
+en,k1+52,k1+52,k1+1+52,5000
+*enddo
+en,2+52,2+52,5020,5000
+*endif
+!!!!!!!!!!!!!!插入节点定义
+n,1+(5002),2000*1+(-9750),16 ,-1244
+!!!!!!!!!!!!!!准备连接element
+type,5000
+mat,5000
+secnum,5002
+*if,1,lt,2,then
+en,5002,5002,1+5002,5000
+en,1+5002,1+5002,5010,5000
+*else
+en,5002,5002,1+5002,5000
+*do,k1,1,1-1
+en,k1+5002,k1+5002,k1+1+5002,5000
+*enddo
+en,1+5002,1+5002,5010,5000
+*endif
+!!!!!!!!!!!!!!插入节点定义
+n,1+(5020),2000*1+(6000),16 ,-1244
+!!!!!!!!!!!!!!准备连接element
+type,5000
+mat,5000
+secnum,5002
+*if,1,lt,2,then
+en,5020,5020,1+5020,5000
+en,1+5020,1+5020,5025,5000
+*else
+en,5020,5020,1+5020,5000
+*do,k1,1,1-1
+en,k1+5020,k1+5020,k1+1+5020,5000
+*enddo
+en,1+5020,1+5020,5025,5000
+*endif
+!!!!!!!!!!!!!!!!!!!!最后变截面的连接以及所有节点与单元的镜像
+type,5000
+mat,5000
+nsel,s,node,,5000,5300
+nsel,a,node,,51,55
+NSYM,Z,500,ALL
+allsel
+esel,s,type,,5000
+ENSYM,500,,500,ALL
+allsel
+save
+	nsel, s, loc, x,-150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, xiaochewei1, node, 0, num, max
+	nsel, s, loc, x,150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, xiaochewei2, node, 0, num, max
+	nsel, s, loc, x,-150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, xiaochewei3, node, 0, num, max
+	nsel, s, loc, x,150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, xiaochewei4, node, 0, num, max
+	nsel, s, loc, x,-10350
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, PL1, node, 0, num, max
+	nsel, s, loc, x,-10050
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, PL2, node, 0, num, max
+	nsel, s, loc, x,-10350
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, PL3, node, 0, num, max
+	nsel, s, loc, x,-10050
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, PL4, node, 0, num, max
+	nsel, s, loc, x,-150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, PL5, node, 0, num, max
+	nsel, s, loc, x,150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, PL6, node, 0, num, max
+	nsel, s, loc, x,-150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, PL7, node, 0, num, max
+	nsel, s, loc, x,150
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, PL8, node, 0, num, max
+	nsel, s, loc, x,9800
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, PL9, node, 0, num, max
+	nsel, s, loc, x,10100
+	nsel, r, loc, y,16
+	nsel, r, loc, z,-1244
+	* get, PL10, node, 0, num, max
+	nsel, s, loc, x,9800
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, PL11, node, 0, num, max
+	nsel, s, loc, x,10100
+	nsel, r, loc, y,16
+	nsel, r, loc, z,1244
+	* get, PL12, node, 0, num, max
+!!!!!!!!!!!!!调主梁的体积，其编号为3 					
+Volume_type_5000=0 													
+Volume_initial_5000=0													
+E_count_5000=0 														
+E_num_5000=0															
+E_min_5000=0															
+esel,	s,	type	,,	5000										
+*get,	E_count_5000,	elem,	0,	COUNT								
+*get,	E_min_5000,	elem,	0,	num,	MIN							
+E_num_5000=E_min_5000														
+*do,	i,	0,	E_count_5000-1,	1									
+*get,	Volume_initial_5000,	elem,	E_num_5000,	VOLU				
+E_num_5000=ELnext(E_num_5000)												
+Volume_type_5000=Volume_initial_5000+Volume_type_5000						
+*enddo																
+mass5000=Volume_type_5000*0.0000078						                
+MP,DENSITY,5000,2*0.0000078*(5217)/mass5000
